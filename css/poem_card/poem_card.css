@@ -1,0 +1,103 @@
+
+.header{
+    /* margin-left: 300px; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    width: 800px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    padding: 20px auto;
+    margin: 20px 0 20px 0;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 山魂田格, 圆润露锋芒, 瘦默陌硬笔手写体, 神韵苏行体, 飘逸体, serif;
+    /* width: 800px; */
+    background-color: rgb(195, 236, 223);
+    background: -webkit-linear-gradient(top left, rgb(195, 236, 223), rgba(0, 0, 255, 0.041));
+    /* background: -webkit-linear-gradient(right, mintcream, rgb(195, 236, 223)); */
+    border-radius: 6px;
+}
+.div_header{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    /* padding: 20px 0 0 20px; */
+}
+hr{
+    width: 600px;
+    margin-bottom: 80px;
+    color: rgb(190, 203, 211);
+}
+.container {
+    position: relative;
+}
+nav {
+    background-color: lavender;
+    text-align: center;
+    height: 400px;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 180px;
+    /* left: 0px; */
+    width: 150px;
+    border: 1px solid lavender;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px lavender;
+}
+nav li{
+    display: inline;
+    color: white;
+    font-size: 18px;
+    margin-left: 25px;
+    /* margin-bottom: 3px; */
+    writing-mode: vertical-lr;
+    list-style: none;
+    /* text-align: center; */
+}
+section {
+    /* position is static by default */
+    width: 800px;
+    margin: 10px 0 0 400px;
+}
+p{
+    font-size: 22px;
+    font-family: 飘逸体, 山魂田格, 圆润露锋芒, 神韵苏行体, 瘦默陌硬笔手写体, serif;
+    line-height: 20px;
+    text-indent: 36px;
+    letter-spacing: 2px;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    background-color: rgb(154, 185, 231);
+    width: 100%;
+    text-align: center;
+    line-height: 70px;
+}
+body {
+    background-color: mintcream;
+    margin-bottom: 120px;
+}
+span{
+    background-color: seashell;
+    border: 1px solid snow;
+    border-radius: 5px;
+    height: 16px;
+    line-height: 16x;
+    margin: 0 2px;
+}
+img{
+    position: fixed;
+    right: 368px;
+    top: 230px;
+    width: 200px;
+    height: 280px;
+    /* border: 1px solid rgb(154, 216, 231); */
+    border-radius: 15px;
+    border: 1px solid rgb(224, 241, 240);
+    box-shadow: 10px 10px 6px rgb(224, 241, 240);
+}
