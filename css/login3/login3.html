@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        @font-face {
+            font-family: jm;
+            src: url("./fonts/JinMeiCuYuanYuanTiGuoJiMa-1.ttf");
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        body{
+            background: url("./img/fj1.png");
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+        }
+
+        .container{
+            width: 300px;
+            padding: 20px;
+            margin: 8% auto 0;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+        }
+
+        .container h1{
+            color: #238ad3;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-size: 25px;
+            font-family: jm, serif;
+        }
+
+        .input-box{
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #999;
+            border-radius: 15px;
+
+        }
+
+        button{
+            margin: 10px 0;
+            color: #ffffff;
+            font-size: 15px;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            background: rgb(131, 196, 240);
+        }
+
+        button:hover{
+            background: rgb(94, 169, 240);
+        }
+
+        button:active{
+            background: rgb(149, 193, 235);
+        }
+
+        .sign-in{
+            margin-left: 5px;
+            text-decoration: none;
+            color: #1c8adb;
+        }
+
+        hr{
+            margin: 15px auto;
+            width: 80%;
+        }
+
+        .or{
+            background: #ffffff;
+            width: 30px;
+            margin: -30px auto 10px;
+        }
+
+        i{
+            font-size: 32px;
+        }
+
+        .check-box{
+            margin: 10px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        <h1>Sign up now</h1>
+        <input class="input-box" type="email" placeholder="Your Email">
+        <input class="input-box" type="email" placeholder="Your Password">
+        <p><span><input type="checkbox" class="check-box"></span> agree to the terms of services</p>
+        <button>Sign up</button>
+        <hr>
+        <p class="or">or</p>
+        <button>Login with wechat</button>
+        <p>Have not an account?<a href="#" class="sign-in">Sign in</a></p>
+        
+    </div>
+</body>
+</html>
