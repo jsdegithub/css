@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            margin: 100px auto;
+            width: 20%;
+            background: rgb(220, 224, 248);
+        }
+        .box .box-item{
+            border-bottom: 1px solid rgba(52, 65, 61, 0.534);
+        }
+        .box .title{
+            padding: 10px;
+            background: rgb(220, 224, 248);
+        }
+        .box-item-content{
+            height: 0;
+            overflow: hidden;
+            background: rgb(206, 208, 238);
+            padding-left: 20px;
+            transition: .5s;
+        }
+        .box .box-item:hover .box-item-content{
+            height: 125px;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            margin: 10px auto;
+        }
+        ul>:first-child{
+            margin-top: 15px;
+        }
+        ul>:last-child{
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-item">
+            <p class="title">Account</p>
+            <ul class="box-item-content">
+                <li>language</li>
+                <li>love</li>
+                <li>picture</li>
+            </ul>
+        </div>
+        <div class="box-item">
+            <p class="title">Messages</p>
+            <ul class="box-item-content">
+                <li>language</li>
+                <li>love</li>
+                <li>picture</li>
+            </ul>
+        </div>
+        <div class="box-item">
+            <p class="title">Settings</p>
+            <ul class="box-item-content">
+                <li>language</li>
+                <li>love</li>
+                <li>picture</li>
+            </ul>
+        </div>
+        <div class="box-item">
+            <p class="title">Logout</p>
+            <ul class="box-item-content">
+                <li>language</li>
+                <li>love</li>
+                <li>picture</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

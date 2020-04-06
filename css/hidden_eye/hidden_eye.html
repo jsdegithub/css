@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Condiment);
+        *{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            text-decoration: none;
+            outline: none;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .content{
+            position: absolute;
+            width: 280px;
+            height: 50px;
+            display: flex;
+        }
+        .content .lock{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #48DBFB;
+            color: #ffffff;
+            line-height: 48px;
+            font-size: 20px;
+            border: 1px solid #48DBFB;
+            border-radius: 3px 0 0 3px;
+        }
+        .content input{
+            height: 100%;
+            width: 100%;
+            border: 1px solid #48DBFB;
+            border-radius: 3px;
+            padding-left: 60px;
+            font-size: 16px;
+            color: #37d7fb;
+            font-family: "Condiment" sans-serif;
+        }
+        input:focus{
+            box-shadow: 0 0 15px #82e6fc,
+                        0 0 25px #b4f0fd,
+                        0 0 35px #ffffff;
+        }
+        input::placeholder{
+            color: #a6a6a6;
+        }
+        .eye{
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .eye i{
+            font-size: 18px;
+            color: #48DBFB;
+            cursor: pointer;
+            display: none;
+        }
+        .eye i.hide:before{
+            content: "\f070";
+        }
+        input:valid ~ .eye i{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="lock">
+            <div class="fa fa-lock"></div>
+        </div>
+        <input id="input_field" type="password" placeholder="Your password" required>
+        <span class="eye">
+            <i id="eye_btn" class="fa fa-eye"></i>
+        </span>
+    </div>
+
+    <script>
+        const password_field=document.getElementById("input_field");
+        const eye_btn=document.getElementById("eye_btn");
+        eye_btn.onclick=function(){
+            if(password_field.type==='password'){
+                password_field.type='text';
+                eye_btn.classList.add("hide");
+            }else{
+                password_field.type='password';
+                eye_btn.classList.remove("hide");
+            }
+        };
+    </script>
+</body>
+</html>

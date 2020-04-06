@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Poppins);
+        *{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            text-decoration: none;
+            outline: none;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Poppins, sans-serif;
+        }
+        nav{
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #f7f1e3;
+            width: 360px;
+            line-height: 40px;
+            padding: 8px 25px;
+            border-radius: 5px;
+        }
+        nav label{
+            color: #1b1b1b;
+            font-size: 22px;
+            font-weight: 500;
+            display: block;
+            cursor: pointer;
+        }
+        .button span{
+            float: right;
+            line-height: 35px;
+        }
+        nav ul{
+            position: absolute;
+            background: #f7f1e3;
+            list-style: none;
+            top: 75px;
+            left: 0;
+            width: 100%;
+            border-radius: 5px;
+            display: none;
+        }
+        [id^=btn]:checked + ul{
+            display: block;
+        }
+        nav ul li{
+            line-height: 40px;
+            padding: 8px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid #f7f1e3;
+        }
+        nav ul li label{
+            font-size: 18px;
+        }
+        nav ul li a{
+            color: #1b1b1b;
+            font-size: 18px;
+            display: block;
+        }
+        nav label:hover,
+        nav ul li a:hover,
+        nav ul li label:hover{
+            color: #34ace0;
+        }
+        nav ul ul{
+            position: static;
+        }
+        nav ul ul li{
+            line-height: 30px;
+            padding-left: 30px;
+            border-bottom: none;
+        }
+        nav ul ul li a{
+            color: #1b1b1b;
+            font-size: 17px;
+        }
+        nav ul li span{
+            font-size: 20px;
+            float: right;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+        nav .menu:before{
+            position: absolute;
+            content: '';
+            height: 20px;
+            width: 20px;
+            right: 20px;
+            top: -10px;
+            background: #f7f1e3;
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+        input{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <label for="btn" class="button">Drop down
+            <span class="fas fa-caret-down"></span>
+        </label>
+        <input type="checkbox" id='btn'>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li>
+                <label for="btn2" class="first">Features
+                    <span class="fas fa-caret-down"></span>
+                </label>
+                <input type="checkbox" id='btn2'>
+                <ul>
+                    <li><a href="#">Pages</a></li>
+                </ul>
+            </li>
+            <li>
+                <label for="btn3" class="second">Services
+                    <span class="fas fa-caret-down"></span>
+                </label>
+                <input type="checkbox" id='btn3'>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">App Design</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
