@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jd_magnifier</title>
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <style>
+        .box_magnifier{
+            box-sizing: border-box;
+            margin: 20px auto;
+            width: 500px;
+            overflow: hidden;
+        }
+        .box_left{
+            box-sizing: border-box;
+            float: left;
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        .box_small_square{
+            display: none;
+            width: 60px;
+            height: 60px;
+            background: #00a8e6;
+            opacity: 0.3;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+        }
+        .box_right{
+            display: none;
+            box-sizing: border-box;
+            float: left;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;     <!-- box_right内的img2超出父元素（也即box_right）的部分，将会被隐藏 -->
+        }
+        .img1{
+            width: 100%;
+            height: 100%;
+        }
+        .img2{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <section class="box_magnifier">
+        <div class="box_left">
+            <img class="img1" src="./img/1.jpg" alt="">
+            <div class="box_small_square"></div>
+        </div>
+        <div class="box_right">
+            <img class="img2" src="./img/2.jpg" alt="">
+        </div>
+    </section>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        let $box_left=$('.box_left'),
+            $box_small_square=$('.box_small_square'),
+            $box_right=$('.box_right'),
+            $img2=$('.img2');
+        let box_left_width=$box_left.outerWidth(),
+            box_left_height=$box_left.outerHeight(),
+            box_left_offset=$box_left.offset(),
+            box_small_square_width=$box_small_square.outerWidth(),
+            box_small_square_height=$box_small_square.outerHeight(),
+            box_right_width=$box_right.outerWidth(),
+            box_right_height=$box_right.outerHeight(),
+            img2_width=box_left_width/box_small_square_width*box_right_width,
+            img2_height=box_left_height/box_small_square_height*box_right_height;
+
+        $img2.css({
+            width:img2_width,
+            height:img2_height
+        });
+
+        function cal_box_small_square_pos(ev) {
+            let min_left=0,
+                max_left=box_left_width-box_small_square_width;
+            let min_top=0,
+                max_top=box_left_height-box_small_square_height;
+            let pos_left=ev.clientX-box_left_offset.left-(box_small_square_width)/2;
+            let pos_top=ev.clientY-box_left_offset.top-(box_small_square_height)/2;
+            pos_left=pos_left<min_left?min_left:(pos_left>max_left?max_left:pos_left);
+            pos_top=pos_top<min_top?min_top:(pos_top>max_top?max_top:pos_top);
+            $box_small_square.css({
+                top:pos_top,
+                left:pos_left
+            });
+            $img2.css({
+                top:-pos_top/box_left_height*img2_height,
+                left:-pos_left/box_left_width*img2_width
+            });
+        }
+
+        $box_left.on('mouseenter',function (ev) {
+            $box_small_square.css('display', 'block');
+            $box_right.css('display', 'block');
+            cal_box_small_square_pos(ev);
+        }).on('mouseleave',function (ev) {
+            $box_small_square.css('display', 'none');
+            $box_right.css('display', 'none');
+        }).on('mousemove',cal_box_small_square_pos);
+    </script>
+</body>
+</html>

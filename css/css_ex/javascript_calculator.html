@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript_calculator</title>
+    <style>
+        .div1{
+            padding: 100px 0;
+        }
+        .div2{
+            margin: 0 auto;
+            width: 280px;
+            text-align: center;
+            padding: 20px;
+            background: -webkit-linear-gradient(top left, lavender, whitesmoke);
+            border: 1px solid lavender;
+            border-radius: 15px;
+            box-shadow: 10px 10px 10px floralwhite;
+        }
+        .header{
+            text-align: center;
+            font-size: 25px;
+            font-family: 字体管家润行, serif;
+            color: #222222;
+            margin-bottom: 25px;
+        }
+        .screen{
+            width: 240px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 18px;
+            font-family: 字体管家润行, serif;
+            margin-bottom: 25px;
+            text-align: right;
+        }
+        .screen:hover{
+            background: ghostwhite;
+        }
+        .div3{
+            overflow: hidden;
+            position: relative;
+            left: 25px;
+            width: 210px;
+            border: 2px solid whitesmoke;
+            border-radius: 5px;
+            padding: 15px 10px;
+        }
+        .button{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 18px;
+            font-family: 字体管家润行, serif;
+            background: lightskyblue;
+            /*border: 1px solid lightskyblue;*/
+            /*border-radius: 3px;*/
+            /*position: relative;*/
+            float: left;
+            outline: none;
+        }
+        .button_margin_right{
+            margin-right: 15px;
+        }
+        .button_margin_bottom{
+            margin-bottom: 15px;
+        }
+        .button:hover{
+            background: deepskyblue;
+        }
+        .button:active{
+            background: dodgerblue;
+        }
+    </style>
+    <script type="text/javascript">
+        var num=0, result=0, num_show='0';
+        var operator=0;
+        var cal=0;
+        var quit=0;
+        function command(num) {
+            var str=String(document.calculator.num_screen.value);
+            str=(str!='0')?((operator==0)?str:''):'';
+            str=str+String(num);
+            document.calculator.num_screen.value=str;
+            operator=0;
+            quit=0;
+        }
+        function plus() {
+            calculate();
+            operator=1;
+            cal=1;
+        }
+        function minus() {
+            calculate();
+            operator=1;
+            cal=2;
+        }
+        function multiply() {
+            calculate();
+            operator=1;
+            cal=3;
+        }
+        function divide() {
+            calculate();
+            operator=1;
+            cal=4;
+        }
+        function percentage() {
+            calculate();
+            operator=1;
+            cal=5;
+        }
+        function equal() {
+            calculate();
+            document.calculator.num_screen.value=result;
+            operator=1;
+            num=0;
+            result=0;
+            num_show='0';
+        }
+        function calculate() {
+            num_show=Number(document.calculator.num_screen.value);
+            if(num!=0&&quit!=1){
+                switch(cal){
+                    case 1:
+                        result=num+num_show;
+                        break;
+                    case 2:
+                        result=num-num_show;
+                        break;
+                    case 3:
+                        result=num*num_show;
+                        break;
+                    case 4:
+                        result=num/num_show;
+                        break;
+                    case 5:
+                        result=num%num_show;
+                        break;
+                }
+                quit=1;
+            }else{
+                result=num_show;
+            }
+            num_show=String(result);
+            document.calculator.num_screen.value=num_show;
+            num=result;
+        }
+        function del() {
+            var str=String(document.calculator.num_screen.value);
+            str=(str!='0')?str:'';
+            str=str.substr(0,str.length-1);
+            str=(str=='')?'0':str;
+            document.calculator.num_screen.value=str;
+        }
+        function clear_screen() {
+            num=0;
+            result=0;
+            num_show='0';
+            document.calculator.num_screen.value='0';
+        }
+    </script>
+</head>
+<body>
+    <div class="div1">
+        <div class="div2">
+            <p class="header">超级计算器</p>
+            <form name='calculator' action="" method="get">
+                <input type="text" name='num_screen' class="screen" value="0" onfocus="this.blur()">
+                <div class="div3">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="command(7)" value="7">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="command(8)" value="8">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="command(9)" value="9">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="del()" value="D">
+                    <input type="button" class="button button_margin_bottom" onclick="clear_screen()" value="C">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="command(4)" value="4">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="command(5)" value="5">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="command(6)" value="6">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="multiply()" value="*">
+                    <input type="button" class="button button_margin_bottom" onclick="divide()" value="/">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="command(1)" value="1">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="command(2)" value="2">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="command(3)" value="3">
+                    <input type="button" class="button button_margin_right button_margin_bottom" onclick="plus()" value="+">
+                    <input type="button" class="button button_margin_bottom" onclick="minus()" value="-">
+                    <input type="button" class="button button_margin_right" onclick="command(0)" value="0">
+                    <input type="button" class="button button_margin_right" onclick="double_zero()" value="00">
+                    <input type="button" class="button button_margin_right" onclick="dot()" value=".">
+                    <input type="button" class="button button_margin_right" onclick="percentage()" value="%">
+                    <input type="button" class="button" onclick="equal()" value="=">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <style>
+        img{
+            width: 38px;
+            height: 39px;
+        }
+        th{
+            height: 40px;
+            /*border: 1px solid lightskyblue;*/
+            font-size: 20px;
+            font-family: AiNiChuanYueRenHai, 飘逸体, 猫妹妹, 神韵苏行体, serif;
+        }
+        td{
+            border: 1px dotted lightskyblue;
+            height: 100px;
+            text-align: center;
+            /*vertical-align: middle;*/
+        }
+        table{
+            margin: 60px auto 0;
+            width: 800px;
+            border: 1px solid lightskyblue;
+            border-radius: 15px;
+            /*border-collapse: collapse;*/
+            overflow: auto;
+            background: url("./img/mao.jpg");
+            /*background-size: cover;*/
+        }
+        caption{
+            margin-bottom: 36px;
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 瘦默陌硬笔手写体, aoyagireisyosimo2, serif;
+        }
+        .univ{
+            position: relative;
+            padding-left: 50px;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: AiNiChuanYueRenHai, 飘逸体, 猫妹妹, 神韵苏行体, serif;
+        }
+        span{
+            position: absolute;
+            left: 280px
+        }
+    </style>
+</head>
+<body>
+    <table cellspacing="0">
+        <caption>XXX成绩单</caption>
+        <tr>
+            <th colspan="4"><p class="univ"><span><img src="./img/uni_logo.jpg" alt=""></span>八一农垦大学</p></th>
+        </tr>
+        <tr>
+            <th>班级</th>
+            <th>姓名</th>
+            <th>总分数</th>
+            <th>照片</th>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                软件工程（1）斑
+            </td>
+            <td>小刘</td>
+            <td>190分</td>
+            <td><img src="./img/beauty5.jpg" alt=""></td>
+        </tr>
+        <tr>
+            <td>小花</td>
+            <td>188分</td>
+            <td><img src="./img/beauty6.jpg" alt=""></td>
+        </tr>
+        <tr>
+            <td style="border-bottom-left-radius: 15px">软件工程（2）班</td>
+            <td>小红</td>
+            <td>185分</td>
+            <td style="border-bottom-right-radius: 15px"><img src="./img/gh1.jpg" alt=""></td>
+        </tr>
+    </table>
+</body>
+</html>

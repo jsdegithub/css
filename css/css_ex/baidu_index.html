@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>form_ex</title>
+    <style>
+        body{
+            background: url("./image/wooden_house.jpg");
+            background-size: cover;
+        }
+        ul{
+            position: absolute;
+            list-style-type: none;
+            right: 0;
+            top: 15px;
+        }
+        ul li{
+            float: right;
+            margin-right: 15px;
+        }
+        ul li a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 仿宋,serif;
+        }
+        ul li a:hover{
+            text-decoration: underline;
+        }
+        .title_sou{
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 圆润露锋芒, 神韵苏行体, 瘦默陌硬笔手写体, 飘逸体, 山魂田格, serif;
+            text-align: center;
+            letter-spacing: 8px;
+            margin-bottom: 16px;
+            margin-top: 138px;
+            padding: 5px;
+        }
+        input[type=button]{
+            width: 61px;
+            height: 36px;
+            /*text-align: center;*/
+            background: dodgerblue;
+            border: 1px solid lightskyblue;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 仿宋, serif;
+            color: white;
+            outline: none;
+        }
+        input[type=button]:hover{
+            background: -webkit-linear-gradient(left, lightskyblue, dodgerblue);
+        }
+        input[type=button]:active{
+            background: lightskyblue;
+        }
+        input[type=search]{
+            padding-left: 10px;
+            width: 300px;
+            height: 36px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 仿宋, serif;
+            border: 1px solid lightskyblue;
+            border-radius: 8px;
+            outline: none;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="#">注册</a></li>
+    <li><a href="#">登录</a></li>
+    <li><a href="#">视频</a></li>
+    <li><a href="#">图片</a></li>
+    <li><a href="#">音乐</a></li>
+    <li><a href="#">首页</a></li>
+</ul>
+<div class="title_sou">
+    金硕搜索
+</div>
+<div>
+    <input type="search">&nbsp;&nbsp;<input type="button" value="搜索">
+</div>
+</body>
+</html>
