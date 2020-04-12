@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="div_box"></div>
+    <script>
+        let box=document.getElementById("div_box");
+        box.addEventListener('touchstart',function(ev){
+            let point=ev.changedTouches[0];
+            this.startX=point.clientX;
+            this.startY=point.clientY;
+            this.startL=this.offsetLeft;
+            this.startT=this.offsetTop;
+            this.isMove=false;
+        });
+        box.addEventListener('touchmove',function(ev){
+            let point=ev.changedTouches[0];
+            this.changeX=point.clientX-this.startX;
+            this.changeY=point.clientY-this.startY;
+            if(Math.abs(this.changeX)>10||Math.abs(this.changeY)>10){
+                this.isMove=true;
+                let curL=this.startL+this.changeX;
+                let curT=this.startT+this.changeY;
+                this.style.cssText=`left:${curL}px;top:${curT}px`;
+            }
+        });
+        box.addEventListener('touchend',function(ev){
+            let point=ev.changedTouches[0];
+            if(!this.isMove){
+                console.log("当前操作为点击操作！");
+                return;
+            }
+            if(Math.abs(this.changeX)>=Math.abs(this.changeY)){
+                if(this.changeX<0){
+                    console.log("当前操作为左划！");
+                }else{
+                    console.log("当前操作为右划！");
+                }
+            }else{
+                if(this.changeY<0){
+                    console.log("当前操作为上划！");
+                }else{
+                    console.log("当前操作为下划！");
+                }
+            }
+        });
+    </script>
+</body>
+</html>
